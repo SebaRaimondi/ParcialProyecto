@@ -2,7 +2,8 @@
 
 class ConteoController extends Controller {
   public function index() {
-    if (!self::isLogged()) {
+    require_once 'Controller/Login.php';
+    if (!LoginController::isLogged()) {
       Twig::render('Conteo/LoginDoesntExists.twig');
     }
 
@@ -11,7 +12,8 @@ class ConteoController extends Controller {
   }
 
   public function conteo() {
-    if (!self::isLogged()) {
+    require_once 'Controller/Login.php';
+    if (!LoginController::isLogged()) {
       Twig::render('Conteo/LoginDoesntExists.twig');
     }
 
