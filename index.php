@@ -32,6 +32,6 @@ if (validateGet(['controller', 'action'])) {
 }
 
 require_once "Controller/$controller.php";
-$controller = $controller.Controller;
+$controller = $controller.'Controller';
 $controller = call_user_func([$controller, 'getInstance']);
 $controller->$action;
