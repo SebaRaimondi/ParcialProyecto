@@ -2,7 +2,7 @@
 
 class LoginController extends Controller {
   public function index() {
-    Twig::render('/Login/Index.twig');
+    Twig::render('Login/Index.twig');
   }
 
   public function login() {
