@@ -2,6 +2,10 @@
 
 class LoginController extends Controller {
   public function index() {
+    if (self::isLogged()) {
+      Twig::render('Login/LoginExists.twig');
+    }
+
     Twig::render('Login/Index.twig');
   }
 
@@ -25,7 +29,8 @@ class LoginController extends Controller {
   }
 
   public function logout() {
-
+    session_destroy();
+    header('Location: index.php');
   }
 
   public static function isLogged() {
