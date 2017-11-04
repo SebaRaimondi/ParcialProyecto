@@ -12,7 +12,7 @@ class Agrupacion {
       "SELECT * FROM votos_agrupaciones
       INNER JOIN agrupacion_politica
       ON votos_agrupaciones.agrupacion_politica_id = agrupacion_politica.id
-      WHERE seccion=:seccion AND circuito=:circuito AND circuito=:circuito"
+      WHERE seccion_codigo=:seccion AND circuito_codigo=:circuito AND mesa_codigo=:mesa"
     );
     $sql->execute([
       'seccion' => $seccion,
