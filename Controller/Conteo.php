@@ -7,7 +7,11 @@ class ConteoController extends Controller {
       Twig::render('Conteo/LoginDoesntExists.twig');
     }
 
-    Twig::render('Conteo/Index.twig');
+    Twig::render('Conteo/Index.twig', [
+      'circuito' = Circuito::all();
+      'mesa' = Mesa::all();
+      'seccion' = Seccion::all();
+    ]);
 
   }
 
