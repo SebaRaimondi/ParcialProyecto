@@ -1,0 +1,6 @@
+{% extends "Base.twig" %}
+{% set page = "InvalidParams" %}
+{% block body %}
+  <a href="index.php">Home</a>
+  <p>No se enviaron todos los parametros. <a href="index.php?controller=login&action=index">Intente nuevamente.</a></p>
+{% endblock %}

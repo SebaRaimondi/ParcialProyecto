@@ -1,0 +1,6 @@
+{% extends "Base.twig" %}
+{% set page = "NoUser" %}
+{% block body %}
+  <a href="index.php">Home</a>
+  <p>No se encontraro ningun usuario con las credenciales ingresadas. <a href="index.php?controller=login&action=index">Intente nuevamente.</a></p>
+{% endblock %}

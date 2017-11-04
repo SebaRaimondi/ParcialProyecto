@@ -1,7 +1,10 @@
 <?php
 
+session_start();
+
 require_once "Connection.php";
-require_once "Controller/Controller.php"
+require_once "Controller/Controller.php";
+require_once "Controller/Twig.php";
 
 function validatePost($args) {
   foreach ($args as $key) {
