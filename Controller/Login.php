@@ -13,6 +13,7 @@ class LoginController extends Controller {
     $user = trim($_POST['user']);
     $pass = trim($_POST['pass']);
 
+    require_once 'Model/User.php';
     $user = User::login($user, $pass);
 
     if (!$user) {
