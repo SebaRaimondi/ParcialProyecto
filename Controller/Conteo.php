@@ -7,6 +7,9 @@ class ConteoController extends Controller {
       Twig::render('Conteo/LoginDoesntExists.twig');
     }
 
+    require_once 'Model/Circuito.php';
+    require_once 'Model/Mesa.php';
+    require_once 'Model/Seccion.php';
     Twig::render('Conteo/Index.twig', [
       'circuito' => Circuito::all(),
       'mesa' => Mesa::all(),
