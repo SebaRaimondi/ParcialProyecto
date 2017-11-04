@@ -10,6 +10,10 @@ class LoginController extends Controller {
   }
 
   public function login() {
+    if (self::isLogged()) {
+      Twig::render('Login/LoginExists.twig');
+    }
+
     if (!validatePost(['user', 'pass'])) {
       Twig::render('Login/InvalidParameters.twig');
     }
