@@ -8,9 +8,9 @@ class ConteoController extends Controller {
     }
 
     Twig::render('Conteo/Index.twig', [
-      'circuito' = Circuito::all();
-      'mesa' = Mesa::all();
-      'seccion' = Seccion::all();
+      'circuito' => Circuito::all();
+      'mesa' => Mesa::all();
+      'seccion' => Seccion::all();
     ]);
 
   }
