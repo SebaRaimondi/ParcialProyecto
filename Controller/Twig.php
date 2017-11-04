@@ -9,7 +9,7 @@ class Twig {
       self::$instance = $twig;
     }
 
-    return self::$instance
+    return self::$instance;
   }
 
   public static function render($path, $context = []) {
