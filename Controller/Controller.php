@@ -7,7 +7,7 @@ class Controller {
   public static function getInstance() {
     if (!isset(self::$instance)) {
       $callerClass = get_called_class();
-      self::$instance = new self;
+      self::$instance = new $callerClass;
     }
     return self::$instance;
   }
