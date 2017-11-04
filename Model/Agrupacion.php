@@ -5,7 +5,7 @@ class Agrupacion {
   $votos_diputados_nacionales, $votos_senadores_provinciales, $votos_concejales,
   $provincia_id, $seccion_codigo, $circuito_codigo, $mesa_codigo, $nombre;
 
-  public static mesa($provincia, $seccion, $circuito, $mesa) {
+  public static function mesa($provincia, $seccion, $circuito, $mesa) {
     $cnn = Connection::getInstance();
 
     $sql = $cnn->prepare(
