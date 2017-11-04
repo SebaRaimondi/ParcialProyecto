@@ -3,17 +3,20 @@
 {% block body %}
   <a href="index.php">Home</a>
   <form class="form" action="index.php?controller=conteo&action=conteo" method="post">
-    <select class="select" name="seccion">
+    <select id="seccion" class="select" name="seccion">
+      <label for="seccion">Seccion</label>
       {% for seccion in secciones %}
         <option value="{{ seccion.codigo }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
       {% endfor %}
     </select>
-    <select class="select" name="circuito">
+    <label for="circuito">Circuito</label>
+    <select id="circuito" class="select" name="circuito">
       {% for circuito in circuitos %}
         <option value="{{ circuito.codigo }}">{{ circuito.codigo }}</option>
       {% endfor %}
     </select>
-    <select class="select" name="mesa">
+    <label for="mesa">Mesa</label>
+    <select id="mesa" class="select" name="mesa">
       {% for mesa in mesas %}
         <option value="{{ mesa.codigo }}">{{ mesa.codigo }}</option>
       {% endfor %}
