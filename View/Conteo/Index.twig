@@ -3,8 +3,8 @@
 {% block body %}
   <a href="index.php">Home</a>
   <form class="form" action="index.php?controller=conteo&action=conteo" method="post">
+    <label for="seccion">Seccion</label>
     <select id="seccion" class="select" name="seccion">
-      <label for="seccion">Seccion</label>
       {% for seccion in secciones %}
         <option value="{{ seccion.codigo }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
       {% endfor %}
