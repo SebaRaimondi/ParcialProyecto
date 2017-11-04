@@ -14,7 +14,7 @@ class Twig {
 
   public static function render($path, $context = []) {
     $contextBase = [];
-    $template = $twig->load($path);
+    $template = self::$instance->load($path);
     echo $template->render($contextBase + $context);
     die;
   }
