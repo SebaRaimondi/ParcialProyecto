@@ -3,7 +3,7 @@
 class Seccion {
   public $codigo, $nombre, $provincia_id;
 
-  public static all() {
+  public static function all() {
     $cnn = Connection::getInstance();
 
     $sql = $cnn->prepare("SELECT * FROM seccion");

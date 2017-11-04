@@ -3,7 +3,7 @@
 class Mesa {
   public $codigo, $circuito_codigo;
 
-  public static all() {
+  public static function all() {
     $cnn = Connection::getInstance();
 
     $sql = $cnn->prepare("SELECT * FROM mesa");
