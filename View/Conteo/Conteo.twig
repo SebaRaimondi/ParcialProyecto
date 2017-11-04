@@ -1,0 +1,24 @@
+{% extends "Base.twig" %}
+{% set page = "Conteo" %}
+{% block body %}
+  <a href="index.php">Home</a>
+  <a href="index.php?controller=conteo&action=index">Conteo</a>
+  <table>
+    <tr>
+      <th>Agrupaciones Politicas</th>
+      <th>Senadores Nacionales</th>
+      <th>Diputados Nacionales</th>
+      <th>Diputados Provinciales</th>
+      <th>Concejales</th>
+    </tr>
+    {% for agrupacion in agrupaciones %}
+      <tr>
+        <td>{{ agrupacion.nombre }}</td>
+        <td>{{ agrupacion.votos_senadores_nacionales }}</td>
+        <td>{{ agrupacion.votos_diputados_nacionales }}</td>
+        <td>{{ agrupacion.votos_senadores_provinciales }}</td>
+        <td>{{ agrupacion.votos_concejales }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "Base.twig" %}
+{% set page = "NoRelation" %}
+{% block body %}
+  <a href="index.php">Home</a>
+  <a href="index.php?controller=conteo&action=index">Conteo</a>
+  <p>No existe la relacion "Mesa: {{ mesa }}, Seccion: {{ seccion }}, Circuito: {{ circuito }}". <a href="index.php?controller=login&action=index">Intente nuevamente.</a></p>
+{% endblock %}

@@ -1,21 +1,21 @@
 {% extends "Base.twig" %}
-{% set page = "login" %}
+{% set page = "Conteo" %}
 {% block body %}
   <a href="index.php">Home</a>
   <form class="form" action="index.php?controller=conteo&action=conteo" method="post">
     <select class="select" name="seccion">
       {% for seccion in secciones %}
-        <option value="{{ loop.index }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
+        <option value="{{ seccion.codigo }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
       {% endfor %}
     </select>
     <select class="select" name="circuito">
       {% for circuito in circuitos %}
-        <option value="{{ loop.index }}">{{ circuito.codigo }}</option>
+        <option value="{{ circuito.codigo }}">{{ circuito.codigo }}</option>
       {% endfor %}
     </select>
     <select class="select" name="mesa">
       {% for mesa in mesas %}
-        <option value="{{ loop.index }}">{{ mesa.codigo }}</option>
+        <option value="{{ mesa.codigo }}">{{ mesa.codigo }}</option>
       {% endfor %}
     </select>
     <input type="submit" name="submit" value="Enviar">

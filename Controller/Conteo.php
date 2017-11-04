@@ -33,15 +33,19 @@ class ConteoController extends Controller {
     $mesa = trim($_POST['mesa']);
 
     require_once 'Model/Agrupacion.php';
-    $mesa = User::mesa($seccion, $circuito, $mesa);
+    $agr = Agrupacion::mesa($seccion, $circuito, $mesa);
 
-    if (!$user) {
-      Twig::render('Login/InvalidLogin.twig');
+    if (!$agr) {
+      Twig::render('Conteo/NoRelation.twig', [
+        'circuito' => $circuito,
+        'mesa' => $mesa,
+        'seccion' => $seccion
+      ]);
     }
 
-    $_SESSION['id'] = $user->id;
-    header('Location: index.php');
-
+    Twig::render('Conteo/Conteo.twig', [
+      'agrupaciones' = $agr
+    ]);
   }
 
 }
