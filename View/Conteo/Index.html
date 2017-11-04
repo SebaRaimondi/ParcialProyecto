@@ -1,0 +1,17 @@
+{% extends "Base.twig" %}
+{% set page = "login" %}
+{% block body %}
+  <a href="index.php">Home</a>
+  <form class="form" action="index.php?controller=conteo&action=conteo" method="post">
+    <select class="select" name="seccion">
+      <option value="{{ loop.index }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
+    </select>
+    <select class="select" name="circuito">
+      <option value="{{ loop.index }}">{{ circuito.codigo }} - {{ circuito.nombre }}</option>
+    </select>
+    <select class="select" name="mesa">
+      <option value="{{ loop.index }}">{{ mesa.codigo }} - {{ mesa.nombre }}</option>
+    </select>
+    <input type="submit" name="submit" value="submit">
+  </form>
+{% endblock %}

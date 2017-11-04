@@ -1,8 +1,5 @@
-<<?php
+<?php
 
-/**
- *
- */
 class Connection {
 
   private static $cnn;
