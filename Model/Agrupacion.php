@@ -5,7 +5,7 @@ class Agrupacion {
   $votos_diputados_nacionales, $votos_senadores_provinciales, $votos_concejales,
   $provincia_id, $seccion_codigo, $circuito_codigo, $mesa_codigo, $nombre;
 
-  public static function mesa($seccion, $circuito, $mesa) {
+  public static function mesa($seccion, $circuito, $mesa, $prov = 2) {
     $cnn = Connection::getInstance();
 
     $sql = $cnn->prepare(
@@ -16,7 +16,7 @@ class Agrupacion {
         AND circuito_codigo=:circuito AND mesa_codigo=:mesa"
     );
     $sql->execute([
-      'prov' => 2,
+      'prov' => $prov,
       'seccion' => $seccion,
       'circuito' => $circuito,
       'mesa' => $mesa

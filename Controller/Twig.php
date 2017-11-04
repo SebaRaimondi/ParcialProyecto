@@ -1,4 +1,6 @@
 <?php
+
+// Controlador de Twig, Singleton que devuelve el Twig_Enviroment como instancia.
 class Twig {
   private static $instance;
 
@@ -12,7 +14,10 @@ class Twig {
     return self::$instance;
   }
 
+  // Para facilitar el uso de Twig, le envio a esta funcion el twig que quiera renderizar
+  // Y un parametro opcional $context que se le enviara a Twig.
   public static function render($path, $context = []) {
+    // ContextBase guarda parametros que se usaran para varias plantillas.
     require_once 'Controller/Login.php';
     $contextBase = [
       'isLogged' => LoginController::isLogged()

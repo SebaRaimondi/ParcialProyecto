@@ -1,5 +1,6 @@
 <?php
 
+// Parent class de todos los controladores.
 class Controller {
 
   private static $instance;
