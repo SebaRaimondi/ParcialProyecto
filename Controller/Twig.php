@@ -13,7 +13,10 @@ class Twig {
   }
 
   public static function render($path, $context = []) {
-    $contextBase = [];
+    require_once 'Controller/Login.php';
+    $contextBase = [
+      'isLogged' => LoginController::isLogged();
+    ];
     $template = self::getInstance()->load($path);
     echo $template->render($contextBase + $context);
     die;

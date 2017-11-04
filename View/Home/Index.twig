@@ -1,9 +1,11 @@
 {% extends "Base.twig" %}
 {% set page = "Home" %}
 {% block body %}
-  <a href="index.php">Home</a>
-  <a href="index.php?controller=login&action=index">Login</a>
-  <a href="index.php?controller=login&action=logout">Logout</a>
-  <a href="#">link3</a>
-  <a href="#">link4</a>
+  {% if isLogged %}
+    <a href="index.php?controller=login&action=logout">Logout</a>
+    <a href="#">link3</a>
+    <a href="#">link4</a>
+  {% else %}
+    <a href="index.php?controller=login&action=index">Login</a>
+  {% endif %}
 {% endblock %}
