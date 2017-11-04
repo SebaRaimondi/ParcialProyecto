@@ -11,9 +11,9 @@ class ConteoController extends Controller {
     require_once 'Model/Mesa.php';
     require_once 'Model/Seccion.php';
     Twig::render('Conteo/Index.twig', [
-      'circuito' => Circuito::all(),
-      'mesa' => Mesa::all(),
-      'seccion' => Seccion::all()
+      'circuitos' => Circuito::all(),
+      'mesas' => Mesa::all(),
+      'secciones' => Seccion::all()
     ]);
 
   }

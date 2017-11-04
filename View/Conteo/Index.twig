@@ -4,14 +4,20 @@
   <a href="index.php">Home</a>
   <form class="form" action="index.php?controller=conteo&action=conteo" method="post">
     <select class="select" name="seccion">
-      <option value="{{ loop.index }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
+      {% for seccion in secciones %}
+        <option value="{{ loop.index }}">{{ seccion.codigo }} - {{ seccion.nombre }}</option>
+      {% endfor %}
     </select>
     <select class="select" name="circuito">
-      <option value="{{ loop.index }}">{{ circuito.codigo }}</option>
+      {% for circuito in circuitos %}
+        <option value="{{ loop.index }}">{{ circuito.codigo }}</option>
+      {% endfor %}
     </select>
     <select class="select" name="mesa">
-      <option value="{{ loop.index }}">{{ mesa.codigo }}</option>
+      {% for mesa in mesas %}
+        <option value="{{ loop.index }}">{{ mesa.codigo }}</option>
+      {% endfor %}
     </select>
-    <input type="submit" name="submit" value="submit">
+    <input type="submit" name="submit" value="Enviar">
   </form>
 {% endblock %}
