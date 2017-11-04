@@ -44,7 +44,7 @@ class ConteoController extends Controller {
     }
 
     Twig::render('Conteo/Conteo.twig', [
-      'agrupaciones' = $agr
+      'agrupaciones' => $agr
     ]);
   }
 
